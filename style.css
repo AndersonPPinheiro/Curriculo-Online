@@ -22,37 +22,100 @@ body {
 /* CONFIGURAÇÕES DO MENU */
 /* Definição das cores para manter a consistência */
 :root {
-    --bg-dark: #2C2F33; /* Fundo escuro principal */
-    --text-light: #F2F2F2; /* Cor de texto clara */
-    --accent-color: #E6B34A; /* Cor de destaque (opcional para o botão) */
-}
-
-.hidden {
-    display: none;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    --dark-principal: #2C2F33; /* Fundo escuro principal */
+    --light-text: #F2F2F2; /* Cor de texto clara */
+    --destaque-color: #E6B34A; /* Cor de destaque */
+	--menu-mobile: #444951; /* Cor Menu Mobile */
 }
 
 header h3 {
-	color: var(--bg-dark);
+	color: var(--dark-principal);
 }
-
-
-
-/* Para o efeito de slide, use esta classe no JS */
-.show-menu {
-    max-height: 600px;
+section h4 {
+	color: var(--dark-principal);
+	text-align: center;
+	width: 60%;
+	font-size: 0.9em;
+	font-weight: 600;
+	display: inline-block;
+	background-color: var(--destaque-color);
+	padding: 5px 15px;
+	border-radius: 10px;
 }
 
 /* --- ESTILO DO CABEÇALHO --- */
 .site-header {
-    background-color: var(--accent-color);
+    background-color: var(--destaque-color);
     padding: 10px 20px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+	position: relative;
+	min-height: 60px;
+}
+
+/* Estilo do botão hambúrguer */
+#hamburger-btn {
+    display: block;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 1000;
+	cursor: pointer;
+}
+
+/* Estilo das "barras" do ícone */
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: var(--dark-principal);
+    transition: all 0.3s ease-in-out;
+}
+
+#main-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%; /* Ocupa toda a largura da tela */
+    background-color: var(--menu-mobile);
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 998;
+	max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+}
+
+#main-menu.show-menu {
+    max-height: 500px;
+    padding: 10px 0; /* Adiciona padding quando aberto */
+}
+
+#main-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#main-menu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--light-text);
+    font-family: 'Montserrat'
+}
+
+#main-menu a:hover {
+    background-color: var(--dark-principal);
+    color: var(--destaque-color);
+}
+
+.desktop-menu {
+    display: none; /* ESCONDIDO por padrão (mobile first) */
 }
 
 @media (min-width: 800px) {
@@ -80,101 +143,50 @@ header h3 {
     .desktop-menu a {
 		font-family: "Montserrat", sans-serif;
         text-decoration: none;
-        color: var(--bg-dark);
+        color: var(--dark-principal);
         padding: 5px 10px;
         transition: color 0.2s;
     }
 
     .desktop-menu a:hover {
-        color: var(--text-light);
+        color: var(--light-text);
     }
 }
 
-/* Estilo do botão hambúrguer */
-#hamburger-btn {
-    display: block;
-    background: none;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-/* Estilo das "barras" do ícone */
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px 0;
-    background-color: var(--bg-dark);
-    transition: all 0.3s ease-in-out;
-}
-
-#main-menu {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%; /* Ocupa toda a largura da tela */
-    background-color: var(--accent-color);
-    padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    z-index: 999;
-	max-height: 0; 
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
-}
-
-#main-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-#main-menu a {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: var(--bg-dark);
-    font-family: 'Montserrat'
-}
-
-#main-menu a:hover {
-    background-color: #3e4247;
-    color: var(--text-light);
-	border-radius: 100px;
-	
-}
-
-/* RESPOSIVIDADE */
-
-@media (max-width: 800px){
-
-	nav ul{
-		position: fixed;
-		right: 0;
-		top: 50px;
-		background: #0b1220;
-		width: 220px;
-		height: calc(100vh - 64px);
-		flex-direction: column;
-		padding: 1rem;
-		transform: translateX(100%);
-		transition: transform 250ms ease;
-	}
-
-	nav ul.show{
-		transform: translateX(0);
-	}
-
-	.menu-toggle{
-		display: block;
-	}
-
-
-}
-
-#seções {
+#sections {
     text-align: center;
     justify-items: center;
+}
+
+section {
+	margin: 50px;
+}
+
+p {
+	margin: 10px;
+}
+
+.site-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.site-main {
+	flex-grow: 1;
+	padding: 20px;
+}
+
+.site-footer {
+	background-color: var(--destaque-color);
+	color: var(--dark-principal);
+	padding: 2px 5px;
+	text-align: center;
+	font-size: 0.9em;
+	flex-shrink: 0;
+}
+
+#icons {
+	width: 35px;
+	padding: 4px;
 }
