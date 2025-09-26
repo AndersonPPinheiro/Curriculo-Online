@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    line-height: 1.5;
+    color: #F2F2F2;
+	background-color: #2C2F33;
+}
+
+/* CONFIGURAÇÕES DO MENU */
+/* Definição das cores para manter a consistência */
+:root {
+    --bg-dark: #2C2F33; /* Fundo escuro principal */
+    --text-light: #F2F2F2; /* Cor de texto clara */
+    --accent-color: #E6B34A; /* Cor de destaque (opcional para o botão) */
+}
+
+.hidden {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+header h3 {
+	color: var(--bg-dark);
+}
+
+
+
+/* Para o efeito de slide, use esta classe no JS */
+.show-menu {
+    max-height: 600px;
+}
+
+/* --- ESTILO DO CABEÇALHO --- */
+.site-header {
+    background-color: var(--accent-color);
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (min-width: 800px) {
+    #hamburger-btn,
+    #main-menu {
+        display: none !important;
+    }
+
+    /* Menu Horizontal */
+    .desktop-menu {
+        display: block; /* MOSTRADO no Desktop */
+    }
+
+    .desktop-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex; /* Organiza os itens de forma horizontal */
+    }
+
+    .desktop-menu li {
+        margin-left: 20px; /* Espaço entre os itens do menu */
+    }
+
+    .desktop-menu a {
+		font-family: "Montserrat", sans-serif;
+        text-decoration: none;
+        color: var(--bg-dark);
+        padding: 5px 10px;
+        transition: color 0.2s;
+    }
+
+    .desktop-menu a:hover {
+        color: var(--text-light);
+    }
+}
+
+/* Estilo do botão hambúrguer */
+#hamburger-btn {
+    display: block;
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Estilo das "barras" do ícone */
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: var(--bg-dark);
+    transition: all 0.3s ease-in-out;
+}
+
+#main-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%; /* Ocupa toda a largura da tela */
+    background-color: var(--accent-color);
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+	max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+}
+
+#main-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#main-menu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--bg-dark);
+    font-family: 'Montserrat'
+}
+
+#main-menu a:hover {
+    background-color: #3e4247;
+    color: var(--text-light);
+	border-radius: 100px;
+	
+}
+
+/* RESPOSIVIDADE */
+
+@media (max-width: 800px){
+
+	nav ul{
+		position: fixed;
+		right: 0;
+		top: 50px;
+		background: #0b1220;
+		width: 220px;
+		height: calc(100vh - 64px);
+		flex-direction: column;
+		padding: 1rem;
+		transform: translateX(100%);
+		transition: transform 250ms ease;
+	}
+
+	nav ul.show{
+		transform: translateX(0);
+	}
+
+	.menu-toggle{
+		display: block;
+	}
+
+
+}
+
+#seções {
+    text-align: center;
+    justify-items: center;
+}
