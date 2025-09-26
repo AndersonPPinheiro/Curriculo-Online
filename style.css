@@ -189,4 +189,9 @@ p {
 #icons {
 	width: 35px;
 	padding: 4px;
+
+}
+
+a {
+	text-decoration: none;
 }
