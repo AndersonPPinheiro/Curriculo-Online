@@ -162,6 +162,10 @@ section {
 	margin: 30px;
 }
 
+.site-main h3 {
+    font-size: 30px;
+}
+
 p {
     padding: 20px;
 	margin: 20px;
@@ -195,4 +199,5 @@ p {
 
 a {
 	text-decoration: none;
+
 }
