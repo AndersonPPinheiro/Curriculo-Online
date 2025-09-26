@@ -34,8 +34,8 @@ header h3 {
 section h4 {
 	color: var(--dark-principal);
 	text-align: center;
-	width: 60%;
-	font-size: 0.9em;
+	width: 100%;
+	font-size: 1.5em;
 	font-weight: 600;
 	display: inline-block;
 	background-color: var(--destaque-color);
@@ -159,11 +159,13 @@ section h4 {
 }
 
 section {
-	margin: 50px;
+	margin: 30px;
 }
 
 p {
-	margin: 10px;
+    padding: 20px;
+	margin: 20px;
+    font-size: 20px;
 }
 
 .site-container {
@@ -189,7 +191,6 @@ p {
 #icons {
 	width: 35px;
 	padding: 4px;
-
 }
 
 a {
