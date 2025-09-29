@@ -19,7 +19,6 @@ body {
 	background-color: #2C2F33;
 }
 
-/* CONFIGURAÇÕES DO MENU */
 :root {
     --dark-principal: #2C2F33;
     --light-text: #F2F2F2;
@@ -302,4 +301,5 @@ a {
         margin: 0;
         padding: 20px;
     }
+
 }
