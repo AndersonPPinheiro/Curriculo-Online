@@ -20,12 +20,11 @@ body {
 }
 
 /* CONFIGURAÇÕES DO MENU */
-/* Definição das cores para manter a consistência */
 :root {
-    --dark-principal: #2C2F33; /* Fundo escuro principal */
-    --light-text: #F2F2F2; /* Cor de texto clara */
-    --destaque-color: #E6B34A; /* Cor de destaque */
-	--menu-mobile: #444951; /* Cor Menu Mobile */
+    --dark-principal: #2C2F33;
+    --light-text: #F2F2F2;
+    --destaque-color: #E6B34A;
+	--menu-mobile: #444951;
 }
 
 header h3 {
@@ -43,7 +42,6 @@ section h4 {
 	border-radius: 10px;
 }
 
-/* --- ESTILO DO CABEÇALHO --- */
 .site-header {
     background-color: var(--destaque-color);
     padding: 10px 20px;
@@ -55,7 +53,6 @@ section h4 {
 	min-height: 60px;
 }
 
-/* Estilo do botão hambúrguer */
 #hamburger-btn {
     display: block;
     background: none;
@@ -65,7 +62,6 @@ section h4 {
 	cursor: pointer;
 }
 
-/* Estilo das "barras" do ícone */
 .bar {
     display: block;
     width: 25px;
@@ -79,7 +75,7 @@ section h4 {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%; /* Ocupa toda a largura da tela */
+    width: 100%;
     background-color: var(--menu-mobile);
     padding: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -91,7 +87,7 @@ section h4 {
 
 #main-menu.show-menu {
     max-height: 500px;
-    padding: 10px 0; /* Adiciona padding quando aberto */
+    padding: 10px 0;
 }
 
 #main-menu ul {
@@ -115,7 +111,7 @@ section h4 {
 }
 
 .desktop-menu {
-    display: none; /* ESCONDIDO por padrão (mobile first) */
+    display: none;
 }
 
 @media (min-width: 800px) {
@@ -124,20 +120,19 @@ section h4 {
         display: none !important;
     }
 
-    /* Menu Horizontal */
     .desktop-menu {
-        display: block; /* MOSTRADO no Desktop */
+        display: block;
     }
 
     .desktop-menu ul {
         list-style: none;
         margin: 0;
         padding: 0;
-        display: flex; /* Organiza os itens de forma horizontal */
+        display: flex;
     }
 
     .desktop-menu li {
-        margin-left: 20px; /* Espaço entre os itens do menu */
+        margin-left: 20px;
     }
 
     .desktop-menu a {

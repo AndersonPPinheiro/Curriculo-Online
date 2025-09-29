@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mainMenu = document.getElementById('main-menu');
 
-    // Verifica se os elementos foram encontrados
     if (hamburgerBtn && mainMenu) {
         hamburgerBtn.addEventListener('click', function() {
             mainMenu.classList.toggle('show-menu');
